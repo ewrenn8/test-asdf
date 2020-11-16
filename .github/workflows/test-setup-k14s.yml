@@ -1,0 +1,11 @@
+name: test-action
+on: [push, pull_request]
+jobs:
+  test-all:
+    name: Test Action
+    runs-on: ubuntu-latest
+    steps:
+    - uses: k14s/setup-k14s-action@v1
+    - run: |
+      ytt version
+      kbld version
